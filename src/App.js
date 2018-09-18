@@ -1,21 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// eslint-disable-next-line
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from './routes/Home/Home';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+function App(){
+  return (
+    <div>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/AISimulation" component={() => window.location.href = "https://marcosld.github.io/AISimulation/"} />
+    </div>
+  );
 }
 
 export default App;
